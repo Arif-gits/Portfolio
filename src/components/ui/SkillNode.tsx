@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion'
-import type { CSSProperties } from 'react'
+import { motion, type MotionStyle } from 'framer-motion'
 import type { SkillDomain } from '@/types'
 
 interface SkillNodeProps {
@@ -7,7 +6,7 @@ interface SkillNodeProps {
   isActive: boolean
   onSelect: (id: string) => void
   onHoverStart?: (id: string) => void
-  style?: CSSProperties
+  style?: MotionStyle
 }
 
 export function SkillNode({ domain, isActive, onSelect, onHoverStart, style }: SkillNodeProps) {
