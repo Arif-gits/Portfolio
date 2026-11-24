@@ -1,16 +1,16 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from 'path'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-// If deploying to GitHub Pages at https://<user>.github.io/<repo>/,
-// set VITE_BASE_PATH="/<repo>/" as an env var before building (see README).
-// Vercel/Netlify/custom domains should leave this unset (defaults to "/").
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
 export default defineConfig({
   plugins: [react()],
   base: process.env.VITE_BASE_PATH || '/',
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': resolve(__dirname, './src'),
     },
   },
 })
