@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  @apply bg-ink text-ash-100 font-body antialiased;
+  background-image: radial-gradient(circle, #232326 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(61, 139, 253, 0.35);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #232326;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3d8bfd;
+}
+
+/* Visible keyboard focus everywhere, no silent focus-loss */
+:focus-visible {
+  outline: 2px solid #3d8bfd;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-10;
+}
+
+.section-eyebrow {
+  @apply font-mono text-xs uppercase tracking-[0.25em] text-signal;
+}
+
+.text-gradient {
+  background: linear-gradient(180deg, #ffffff 0%, #a3a3a8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
